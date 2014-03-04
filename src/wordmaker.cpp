@@ -247,6 +247,7 @@ class WordMaker
 		void operator()(trie_result_t& res)
 		{
 			static int gtest = 1000;
+			static const float W = 4;
 
 			char suffix[256];
 			pmaker->trie.suffix(suffix, res.length, res.id);
@@ -322,7 +323,6 @@ class WordMaker
 			fprintf(pmaker->out_file, "%s\t%d\n", word.c_str(), res.value);
 		}
 		WordMaker* pmaker;
-		static const float W = 4;
 	};
 
 public:
